@@ -1,0 +1,78 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+
+\title{Justificarea Alegerii Algoritmului Naive Bayes pentru Clasificarea Email-urilor Spam}
+\author{Apricopoai Andrei-Constantin, Roman Lavinia}
+\date{12.01.2024}
+
+\begin{document}
+
+\maketitle
+
+Acest raport justifică alegerea algoritmului Naive Bayes pentru problema de clasificare a email-urilor spam. Analizăm atât aspectele teoretice, cât și rezultatele experimentale, comparând Naive Bayes cu alți algoritmi de clasificare.
+
+\section{Introducere}
+Clasificarea email-urilor spam este o provocare majoră în domeniul procesării textului și al învățării automate. Acest raport explorează utilizarea algoritmului Naive Bayes pentru această sarcină și justifică alegerea sa prin analiza teoretică și compararea performanței cu alte metode.
+
+\section{Fundamentele Teoretice ale Naive Bayes}
+Naive Bayes este un clasificator probabilistic bazat pe aplicarea Teoremei Bayes cu presupunerea de independență naivă între predictori. Această simplificare face Naive Bayes surprinzător de eficient pentru clasificarea textelor, cum ar fi email-urile, datorită abilității sale de a gestiona un număr mare de caracteristici și de a se adapta rapid la noi date.
+
+
+\section{Descrierea Setului de Date Ling-Spam}
+
+Setul de date Ling-Spam este folosit extensiv în clasificarea email-urilor pentru a distinge între spam și mesaje legitime. Acesta conține email-uri colectate de pe o listă de discuții despre lingvistică, incluzând atât mesaje relevante (non-spam), cât și mesaje nesolicitate (spam).
+
+\subsection{Compoziția Setului de Date}
+
+Setul este compus din email-uri clasificate în două categorii principale: 
+\begin{itemize}
+    \item \textbf{Spam:} Email-uri nesolicitate, adesea conținând publicitate sau alte mesaje irelevante.
+    \item \textbf{Non-Spam:} Mesaje legitime, relevante pentru subiectul listei de discuții.
+\end{itemize}
+
+Fiecare email din set este marcat corespunzător, cu email-urile de spam având adesea un prefix distinctiv în titlu, cum ar fi "spm".
+
+\subsection{Prelucrarea și Pregătirea Datelor}
+
+Prelucrarea setului de date Ling-Spam implică mai mulți pași esențiali pentru a-l pregăti pentru analiza de clasificare:
+
+\begin{enumerate}
+    \item \textbf{Curățarea Textului:} Eliminarea elementelor nerelevante din email-uri, cum ar fi anteturile, semnăturile și orice alt text care nu contribuie la identificarea naturii spam a mesajului.
+    \item \textbf{Extragerea Conținutului:} Separarea textului efectiv al email-ului de metadate și structurarea acestuia într-un format adecvat pentru procesare.
+    \item \textbf{Etichetarea Datelor:} Asigurarea că fiecare email este corect etichetat ca fiind spam sau non-spam, bazat pe marcajele existente sau pe evaluări manuale.
+\end{enumerate}
+
+Acești pași sunt cruciali pentru a asigura acuratețea și eficiența algoritmilor de clasificare care vor fi aplicați ulterior pe acest set de date.
+
+\subsection{Metodologia Experimentală}
+
+Metodologia experimentală adoptată pentru evaluarea algoritmului Naive Bayes și compararea acestuia cu alți algoritmi implică mai mulți pași, de la prelucrarea inițială a datelor până la evaluarea finală a performanței modelului.
+
+
+\subsubsection{Setările de Antrenament}
+
+Pentru antrenarea modelului, am folosit următoarele setări:
+\begin{itemize}
+    \item \textbf{Împărțirea Datelor:} Setul de date a fost împărțit într-un set de antrenament și un set de testare, utilizând o proporție de 90\% pentru antrenament și 10\% pentru testare.
+    \item \textbf{Parametrii Modelului:} În cazul Naive Bayes, am utilizat setări implicite.
+    \item \textbf{Cross-Validare:} Pentru a evalua robustețea modelului, am aplicat tehnici de cross-validare, cum ar fi k-fold sau Leave-One-Out, pe setul de antrenament.
+\end{itemize}
+
+\subsubsection{Metodele de Evaluare}
+
+Evaluarea performanței fiecărui model s-a bazat pe mai multe metrici:
+\begin{itemize}
+    \item \textbf{Acuratețea:} Procentul de clasificări corecte realizate de model.
+    \item \textbf{Timpul de Antrenament:} Evaluarea eficienței temporale a fiecărui algoritm.
+\end{itemize}
+
+Această metodologie ne-a permis să realizăm o evaluare cuprinzătoare a performanței Naive Bayes în comparație cu alte tehnici de clasificare, oferind astfel o bază solidă pentru selecția algoritmului cel mai potrivit pentru problema noastră.
+
+
+
+\section{Concluzii}
+Concluzionați de ce Naive Bayes este o alegere adecvată pentru această problemă, subliniind echilibrul său unic între eficiență, acuratețe și simplitate.
+
+\end{document}
